@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 public class RestControllerScannerAutoConfiguration {
 
     @Bean
-    @ConditionalOnProperty(value = {"nextop.zeebe.nacos.metadata.setting"}, matchIfMissing = true)
+    @ConditionalOnProperty(value = {"nextop.zeebe.nacos.metadata.enabled"}, matchIfMissing = true)
     public NacosDiscoveryProperties discoveryProperties(ApplicationContext applicationcontext) {
         NacosDiscoveryProperties properties = new NacosDiscoveryProperties();
         RestControllerScanner scanner = new RestControllerScanner(applicationcontext, properties);
